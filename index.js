@@ -8,7 +8,7 @@ app.use(express.json())
 const cors = require('cors')
 
 app.use(cors())
-app.use(express.static('dist'))
+
 
 
 let notes = [
@@ -28,6 +28,9 @@ let notes = [
       important: true
     }
   ]
+
+  app.use(express.static('dist'))
+  
   app.get('/', (request, response) => {
     response.send('<h1>Hello World!</h1>')
   })
